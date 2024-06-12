@@ -12,6 +12,12 @@ print("Image size:", img.size)
 
 head = img[80:165, 65:170]
 
+b, g, r = cv.split(img)
+
 cv.imshow("Head of parakeet", head)
+cv.imshow("Parakeet (blue)", b)
+cv.imshow("Parakeet (green)", g)
+cv.imshow("Parakeet (red)", r)
+cv.imshow("Parakeet (merge)", cv.merge((b,g,r)))
 cv.waitKey(0)
 cv.destroyAllWindows()
